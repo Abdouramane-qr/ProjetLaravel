@@ -1,0 +1,656 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.header-top {
+    background: #434242;
+    padding:  6px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.header-top a {
+    color:  #fff;
+}
+
+.mit-info span a {
+    font-size:  15px;
+    padding-right:  25px;
+    opacity: .9;
+    text-decoration:  none;
+}
+
+.mit-info span a i {
+    padding-right:  8px;
+}
+
+.header-social a i {
+    display:  inline-block;
+    padding-left:  10px;
+    font-size:  15px;
+}
+
+.header-social a i:hover {
+    color: #3693f1;
+}
+
+.mit-info span a:hover {
+    color:  #3693f1;
+}
+.header-main{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.logo a {text-transform:  uppercase;font-weight: 700;font-size: 34px;font-style: inherit;text-decoration:  none;}
+.logo a:hover{
+    text-decoration: none;
+}
+.logo a span {
+    color: #F85252;
+}
+
+.main-menu-header ul {
+    margin:  0;
+    padding:  0;
+    list-style:  none;
+}
+
+.main-menu-header ul li {
+    display:  inline-block;
+}
+
+.main-menu-header ul li a {
+    text-decoration:  none;
+    display:  block;
+    text-transform:  uppercase;
+    font-weight: 600;
+    padding-left: 15px;
+    color:  #333;
+    padding-top: 15px;
+}
+
+
+.header-main {
+    padding:  10px 0;
+}
+html,body{
+    height: 100%;
+}
+
+
+.single-slide-item{
+    padding: 140px 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.single-slide-item::after{
+    position: absolute;left: 0;top: 0;width: 100%;height: 100%;content: "";background: #333;opacity: .5;z-index: -1;
+}
+.slidebg1{
+    background-image: url(../img/apple-computer-decor-326502.jpg);
+}
+.slidebg2{
+    background-image: url(../img/student-849825_1920.jpg);
+}
+.slidebg3{
+    background-image: url(../img/pexels-photo-716281.jpeg);
+}
+
+
+
+.service-bg-1{
+    background-image: url(../img/pexels-photo-716281.jpeg);
+}
+.service-bg-2{
+    background-image: url(../img/web-dev.jpeg);
+}
+.service-bg-3{
+    background-image: url(../img/domain-hosting.jpg);
+}
+.service-bg-4{
+    background-image: url(../img/pexels-photo-167832.jpeg);
+}
+.our-courses-section {
+    padding-top:  50px;
+    background: #f5f5f5;
+}
+.service-img {
+    background-size: 100%;
+    background-position:  center center;
+    width:  100%;
+    height: 170px;
+    transition:  .3s;
+}
+
+.mit-service-section {
+    padding-top: 50px;
+    padding-bottom: 35px;
+}
+
+.single-service-box {
+    text-align:  left;
+    font-family: raleway;
+    border-bottom: 4px solid #f85252;
+    background:  #fff;
+    transition: .3s;
+    margin-bottom: 15px;
+}
+
+.single-service-box h2 {
+    font-size: 20px;
+    font-weight:  600;
+    transition:  .3s;
+}
+
+.single-service-box p {
+    line-height:  23px;
+    padding-top:  5px;
+    padding-bottom:  10px;
+    font-size: 14px;
+}
+
+.single-service-box:hover .service-img {
+    background-size: 130%;
+}
+
+.single-service-box:hover {
+    border-color: #337ab7;
+}
+
+.single-service-box:hover h2 {
+    color: #337ab7;
+}
+.slide-content {
+    color:  #fff;
+    font-family:  raleway;
+}
+
+.slide-content h2 {
+    margin:  0;
+    padding-bottom: 26px;
+    font-size: 34px;
+    text-transform:  uppercase;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.slide-content p {
+    font-size:  15px;
+}
+
+.slide-botton a {
+    display: inline-block;
+    color:  #fff;
+    background: #f85252;
+    padding:  10px 20px;
+    font-weight:  500;
+    text-transform:  uppercase;
+    font-size:  13px;
+    border-radius:  3px;
+    margin-right:  15px;
+}
+
+.slide-botton {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+.section-title h3 {
+    font-size: 34px;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align:  center;
+    margin:  0;
+    margin-bottom: 50px;
+    position: relative;
+        padding-bottom: 20px;
+}
+.section-title h3:after, .section-title h3:before {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 140px;
+    height: 3px;
+    content: "";
+    background: #D08D25;
+    margin: 0 auto;
+    margin-left: -70px;
+}
+.section-title h3:after {
+    bottom: -10px;
+}
+.section-title {
+    width: 380px;
+    margin:  0 auto;
+    text-align:  center;
+     margin-bottom: 80px;
+}
+
+.section-title h3:before {
+    width: 80px;
+    margin: 0 auto;
+    margin-left: -40px;
+}
+.welcome-slides .owl-dots div {
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    margin: 3px;
+    display:  inline-block;
+}
+
+.welcome-slides .owl-dots {
+    position:  absolute;
+    left: 50%;
+    bottom: 9px;
+}
+
+.welcome-slides .owl-dots .active {
+    background: #f85252;
+}
+
+.mit-about-photo img {
+    width:  100%;
+    max-height: 100%;
+}
+.mit-about-photo {
+    max-height: 400px;
+    width:  100%;
+    overflow:  hidden;
+}
+.mit-about-content {
+    height:  400px;
+    display:  flex;
+    flex-direction:  column;
+    justify-content:  center;
+    padding: 0  20px;
+}
+
+.mit-about-content h2 {
+    margin:  0;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight:  600;
+}
+
+.mit-about-content p {margin:  0;}
+
+.mit-about-content h2 span {
+    text-transform:  uppercase;
+    color: #f85252;
+}
+
+.mit-about-content p {
+    font-size:  15px;
+    padding: 16px 0;
+}
+.learn-btn a {
+    display:  inline-block;
+    color: #f85252;
+    padding:  10px 20px;
+    text-transform:  uppercase;
+    font-weight:  600;
+    font-size:  13px;
+    border-radius:  3px;
+    border: 2px solid #f85252;
+    text-decoration: none;
+    transition: .2s;
+
+}
+.learn-btn a:hover{
+    text-decoration: none;
+    background: #f85252;
+    color: #fff;
+}
+.learn-btn {
+    margin-top:  21px;
+}
+.single-slide-item {
+    position:  relative;
+}
+.about-mit-section, .our-courses-section,.mit-counter-section{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.course-img img {
+    width:  100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.course-img {
+    height: 180px;
+    width:  100%;
+    position:  relative;
+}
+
+.course-img:after {
+    position:  absolute;
+    left: -100%;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    content:  "";
+    background: #F39B01;
+    border-radius:  5px;
+    opacity: 0;
+    visibility:  hidden;
+    transition:  .3s;
+}
+
+.course-img:hover:after {
+    left:  0;
+    opacity: .8;
+    visibility:  visible;
+}
+
+.single-course-box {
+    overflow:  hidden;
+    border-bottom:  1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.single-course-box {}
+
+.single-course-box h3 {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3c3c3c;
+}
+
+
+
+
+
+
+
+.coures-img-hover a i {
+    font-size: 18px;
+    background: #272D39;
+    width: 40px;
+    height: 40px;
+    border-radius:  50px;
+    line-height: 40px;
+    text-align:  center;
+    color:  #fff;
+}
+
+.coures-img-hover {
+    right: -40px;
+    position:  absolute;
+    top: 50%;
+    margin-right: -20px;
+    margin-top:  -20px;
+    z-index:  2;
+    transition:  .3s;
+}
+
+.course-img:hover .coures-img-hover {
+    right:  50%;
+}
+
+.price {
+    background: #272D39;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 10;
+    border-radius: 3px;
+    transform: rotate(-48deg);
+    display: block;
+    left: 0;
+    top: 9px;
+    width: 80px;
+    text-align: center;
+}
+
+
+.mit-counter-section{
+    background-image: url(../img/mitfarm.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    background-attachment: fixed;
+    color: #fff;
+    padding-top: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+.mit-counter-section:after {
+    position:  absolute;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    content:  "";
+    background:  #333;
+    opacity:  .9;
+    z-index:  -1;
+}
+
+.cont-he {
+    font-size:  30px;
+    display:  inline-block;
+    padding-bottom: 43px;
+    text-transform:  capitalize;
+}
+
+
+.single-count-box {
+    margin-bottom: 50px;
+}
+
+.single-count-box h3 {
+    margin:  0;
+    padding:  20px 0;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.single-count-box p {
+    text-transform:  capitalize;
+    font-size: 20px;
+    font-weight: 300;
+}
+.cicon span {
+    font-size: 40px;
+}
+
+
+
+
+.single-gallery-img {
+    width: 20%;
+    float:  left;
+    height: 230px;
+    background:  #ddd;
+    background-size:  cover;
+    background-position:  center center;
+    position:  relative;
+    z-index:  1;
+    display:  flex;
+    justify-content:  center;
+    align-items:  center;
+}
+
+.gallery-bg1 {
+    background-image:  url(../img/student-849825_1920.jpg);
+}
+.gallery-bg2 {
+    background-image:  url(../img/blog_4.jpg);
+}
+.gallery-bg3 {
+    background-image:  url(../img/Elementary-School-330x220.jpg);
+}
+.gallery-bg4 {
+    background-image:  url(../img/ler-sem2-1024x639.jpg);
+}
+.gallery-bg5 {
+    background-image:  url(../img/pexels-photo-668137.jpeg);
+}
+.gallery-bg6 {
+    background-image:  url(../img/Student-Guidance-330x220.jpg);
+}
+
+.single-gallery-img.width {
+    width:  40%;
+    height: 460px;
+}
+
+.single-gallery-img.height {
+    width: 40%;
+}
+
+.single-gallery-img:after {
+    position:  absolute;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    content:  "";
+    background:  #333;
+    opacity: 0;
+    z-index: -1;
+    visibility:  hidden;
+    transition: .3s;
+}
+
+.gallery-icon i.fa {
+    font-size: 20px;
+    color:  #fff;
+    transition:  .3s;
+}
+
+.gallery-icon {opacity:  0;visibility:  visible;transition:.3s;}
+
+.single-gallery-img:hover .gallery-icon {
+    opacity: 1;
+    visibility:  visible;
+}
+.events-gallery-section{
+    padding: 50px 0;
+}
+.section-title {
+    font-family: raleway;
+}
+
+.single-gallery-img:hover:after {
+    opacity: .5;
+    visibility:  visible;
+}
+.post-img img {
+    width:  100%;
+    max-height: 250px;
+}
+
+.post-img {
+    position:  relative;
+    z-index:  1;
+}
+
+p.post-date {
+    margin:  0;
+    position:  absolute;
+    left:  0;
+    bottom:  0;
+    color:  #fff;
+    background: #24ab58;
+    font-size: 15px;
+    padding:  6px 10px;
+}
+
+.single-blog-post {
+    font-family:  raleway;
+    padding-bottom: 19px;
+}
+
+.single-blog-post p {
+    font-size:  15px;
+}
+
+.read-more a {
+    color: #24ab58;
+    font-size:  17px;
+    text-decoration:  none;
+    text-transform:  capitalize;
+}
+
+.read-more a i {
+    padding-left:  10px;
+}
+.member-img img {
+    width:  100%;
+    height: 100%;
+}
+
+.member-img {
+    height:  300px;
+}
+
+.single-member-area {
+    position:  relative;
+    font-family:  raleway;
+}
+
+.member-hover {
+    position:  absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height:  90%;
+    background: #fff;
+    color: #262626;
+    display:  flex;
+    flex-direction:  column;
+    text-align:  center;
+    justify-content:  center;
+    transition:  .3s;
+    opacity:  0;
+    visibility:  hidden;
+    transform: scale(.3);
+}
+
+.member-hover h3 {
+    margin:  0;
+    font-size: 22px;
+}
+
+.member-hover p {
+    font-size:  15px;
+    text-transform:  capitalize;
+    padding-top:  9px;
+}
+
+.member-social a i {
+    font-size:  16px;
+    padding:  4px;
+    color:  #333;
+}
+
+.single-member-area:hover .member-hover {
+    opacity:  .9;
+    visibility:  visible;
+    transform:scale(1);
+}
+.mit-member-section {
+    padding:  50px 0;
+}

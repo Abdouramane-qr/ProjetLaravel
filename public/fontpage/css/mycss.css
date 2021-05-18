@@ -1,0 +1,120 @@
+body{
+	color:#272D39;
+}
+
+.top_bg {
+
+    background: #272D39;
+
+}
+.logo img{
+	height:65px;
+	width:100px;
+}
+.header_top {
+
+    padding: 1em 0;
+
+}
+.navbar {
+	margin-bottom: 0px;
+	border-bottom:2px solid #D08D25;
+}
+.bg-dark {
+	 background: #172029 !important;
+}
+.top-sellers{
+	margin-top:75px;
+}
+.section-gap {
+	padding: 17px 0px;
+	
+}
+.new-items{
+	margin-top:20px;
+}
+.pb-70 {
+
+    padding-bottom: 19px;
+    margin-top: 50px;
+}
+.new h3, .top-sellers h3 {
+	color: #172029 ;
+}
+.seller-grids a {
+	color: #172029 ;
+}
+.item-info a, .item-info2 a, .item-info3 a, .item-info4 a, .item-info5 a, .item-info6 a {
+	 background: #D08D25 ;
+	 color:#FFF;
+}
+.item-info6 a:hover {
+	 background: #172029 ;
+	 color:#D08D25;
+}
+.pbtn-2 {
+	 background: #D08D25 ;
+	 
+	 border:1px solid #D08D25;
+}
+.primary-btn:hover {
+	background:#272D39;
+	color:#FFF
+}
+ 
+.owl-carousel .owl-item img{
+	height: 200px;
+}
+.seller-grid img {
+    width: 100%;
+    height: 240px;
+    margin-top: 40px;
+}
+.btn-success{
+	background-color: #D08B26;
+	border: #D08B26; 
+}
+a.continue{
+	background-color: #D08B26;
+}
+a.order:hover{
+	background-color: #D08B26;
+}
+a.order{
+	background-color: #272D39;
+}
+.log form input[type="submit"]{
+	background-color: #D08B26;
+}
+.log form input[type="submit"]:hover{
+	background-color: #272D39;
+}
+.login_sec h2 ,.login-right h3{
+	color: #D08B26;
+}
+.acount-btn{
+	background-color: #D08B26;
+}
+
+.acount-btn:hover{
+	background-color: #272D39;
+}
+.registration_form input[type="submit"]{
+	background-color: #D08B26;
+}
+.registration_form input[type="submit"]:hover{
+	background-color: #272D39;
+}
+.registration h2{
+	color: #D08B26;
+}
+.login a{
+	background-color: #D08B26;
+	color: #FFF;
+	font-weight: bold;
+}
+.login a:hover{
+	background-color: #D08B26;
+	color: #FFF;
+
+}

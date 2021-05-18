@@ -1,0 +1,71 @@
+ nav{
+	width:100%;
+	margin:0 auto;
+}
+.nav{
+	width:80%;
+	margin:0 auto;
+}
+.logo img{
+	height:55px;
+	width:65px;
+	float:left;
+}
+.nav h3{
+	font-size:25px;
+	padding:14px;
+}
+.fullbody{
+	width:100%;
+	margin:0 auto;
+}
+.body{
+	width:80%;
+	margin:0 auto;
+}
+.body h3{
+	text-align:center;
+	color:#83e083;
+	border-bottom:1px solid red;
+}
+.tblone {
+  border: 1px solid #fff;
+  width: 99%;
+
+}
+.tblone th {
+  background: #666 none repeat scroll 0 0;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 8px;
+  text-align: center;
+    
+}
+.tblone td{padding:3px;text-align:center;}
+
+table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
+table.tblone tr:nth-child(2n){background:#d1f5d0;height:30px;}
+table.tblone input[type="number"] {
+  border: 1px solid #ddd;
+  padding: 2px;
+  width: 60px;
+}
+table.tblone input[type="submit"] {
+  background: #333 none repeat scroll 0 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 1px 5px;
+}
+table.tblone a {
+  color: #fe5800;
+  font-weight: bold;
+  text-decoration: none;
+}
+table.tblone a:hover{color: #000;transition: all 1s; }
+table.tblone img {
+  height: 80px;
+  width: 100px;
+}

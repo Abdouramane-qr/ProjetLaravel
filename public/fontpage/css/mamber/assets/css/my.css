@@ -1,0 +1,29 @@
+.megahost-area{
+	background-image: url(.../assets/img/mitfarm.png);
+	background-size: cover;
+	 
+
+}
+.breadcrumb-area.breadcrumb-bg{
+	background-image: url(../img/megahost-image.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.breadcrumb-area.breadcrumb-bg1{
+	background-image: url(../img/img/apple-computer-decor-326502.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	}
+.breadcrumb-area.breadcrumb-bg3{
+	background-image: url(../img/img/about-img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	}
+.breadcrumb-area:after {
+	    background-color: rgba(3, 0, 0, 0.7);
+}
