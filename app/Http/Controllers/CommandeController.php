@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Commande;
 use App\type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use PDF;
 
@@ -20,6 +21,7 @@ class CommandeController extends Controller
         $prixTotalCom = 0;
         $name = '';
         $adresse = '';
+        $status = '';
         foreach ($commandes as $commands) {
             $prixTotalCom += $commands->TTLE();
             $name = $commands->nom;
@@ -30,6 +32,7 @@ class CommandeController extends Controller
         view()->share('types', $types);
         view()->share('name', $name);
         view()->share('adresse', $adresse);
+        view()->share('status', $status);
 
         $pdf = PDF::loadView('generate-pdf', [
             'prixTotalCom' => $prixTotalCom,
@@ -79,9 +82,13 @@ class CommandeController extends Controller
 
         //     return redirect()->back();
         // }
-
+        $groups = Commande::select('status')
+        ->take(10)
+        ->get();
         $comm = new Commande();
         $comm->nom = $request->nom;
+        $comm->status = $request->status;
+        $comm->telephone = $request->telephone;
         $comm->article = $request->article;
         $comm->price = $request->price;
         $comm->quantite = $request->quantite;
@@ -98,22 +105,9 @@ class CommandeController extends Controller
 
         $Current_stock = $types->Current_stock - $comm->quantite;
         $types->Current_stock = $Current_stock;
+        $types->decrement('Current_stock');
         $types->save();
         $comm->save();
-
-        // $comm->save(['Current_stock']);
-
-        // Commande::create([
-        //     'nom' => $request->nom,
-        //     'article' => $request->article,
-        //     'quantite' => $request->quantite,
-        //     'price' => $request->price,
-        //     // 'adresse' => $request->adresse,
-        //     // 'email' => $request->email,
-        //     // 'solde' => $request->solde,
-        //    // 'telephone' => $request->telephone,
-        //     'solde' => $request->quantite * $request->price,
-        // ]);
 
         // dd($request->all());
         // $artciAct = $request->quantite - $request->Current_stock;
@@ -129,12 +123,19 @@ class CommandeController extends Controller
 
     public function index()
     {
+        $groups = Commande::select('status')
+        ->take(10)
+        ->get();
+        
+
+        dd($groups);
+
         $prixTotalCom = 0;
         $types = type::all();
         view()->share('types', $types);
         view()->share('prixTotalCom', $prixTotalCom);
 
-        return view('In.show');
+        return view('In.show', compact('groups', $groups, 'depen', $depen));
     }
 
     public function changeStatus(Request $request, $id)
@@ -142,6 +143,7 @@ class CommandeController extends Controller
         $orders = Commande::find($id);
         Commande::where('id', $id)->update(['status' => $request->status]);
         view()->share('orders', $orders);
+        dd($orders);
 
         return view('In.show', compact('$orders'));
     }

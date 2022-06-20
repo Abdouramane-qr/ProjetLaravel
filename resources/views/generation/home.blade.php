@@ -37,8 +37,9 @@ Generation
                               <td>{{ $command->nom }}</td>
                               <td>{{ $command->article }}</td>
                               <td>{{ $command->created_at }}</td>
-                              <td>{{ $command->price }}</td >
                               <td>{{ $command->quantite}}</td>
+                              <td>{{ $command->price }}</td >
+                              
                              
                               {{-- <td>{{ $command->adresse}}</td>
                               <td>{{ $command->email }}</td> --}}

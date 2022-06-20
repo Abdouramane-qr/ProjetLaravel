@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Commande extends Model
 {
     protected $fillable = [
+        'client_id',
        'nom',
+       'status',
         'article',
       'quantite',
         'price',
@@ -21,7 +23,7 @@ class Commande extends Model
     ];
 
     private $Prixtotl;
-    private $total;
+    // private $total;
     public $ptixtt;
 
     public function client()
@@ -36,12 +38,12 @@ class Commande extends Model
 
     public function type()
     {
-        return $this->hasMany(Commande::class, 'commande_id', 'id');
+        return $this->hasMany(Commande::class);
     }
 
     public function recette()
     {
-        return $this->hasMany(Recette::class, 'recette_id', 'id');
+        return $this->hasMany(Recette::class);
     }
 
     public function furnisseur()

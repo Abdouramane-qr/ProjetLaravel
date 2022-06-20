@@ -10,6 +10,7 @@ class Commande extends Model
     protected $fillable = [
        'nom',
         'article',
+        'status',
       'quantite',
         'price',
        'adresse',

@@ -21,7 +21,7 @@
 
                         	<address>
 														<strong>Phone</strong><br>
-														<abbr title="Phone">{{ $client->telephone }}</abbr>
+														<abbr title="Phone">{{ $client->telephone}}</abbr>
 													</address>
 													<address>
 														<strong>Email</strong><br>

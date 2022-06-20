@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8"> --}}
 
-                {{-- @if (session()->has('message'))
+{{-- @if (session()->has('message'))
                     <p class="btn btn-success btn-block btn-sm custom_message text-left">{{ session()->get('message') }}
                     </p>
                 @endif
@@ -31,7 +31,7 @@
                     </tbody>
                 </table>
             </div> --}}
-            {{-- <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+{{-- <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>ESSENCES</th>
@@ -46,7 +46,7 @@
 
                 <tbody>
                     <tr> --}}
-                        {{-- @foreach ($depenses as $depens)
+{{-- @foreach ($depenses as $depens)
                             <td> {{ $depens }}</td>
                         @endforeach --}}
 
@@ -55,7 +55,7 @@
 
 
 
-                    {{-- </tr>
+{{-- </tr>
 
                 </tbody>
 
@@ -98,7 +98,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
+   
     <table class="table table-bordered">
         <tr>
             <th>No</th>
@@ -118,7 +118,7 @@
                 <td class="text-center">{{ $recette->motif_depense }}</td>
                 <td>
 
-                    
+
 
                     <form action="{{ route('recette.delete', $recette->id) }}" method="POST">
                         @csrf
@@ -133,29 +133,125 @@
                 </td>
             </tr>
         @endforeach
-       
+
     </table>
+    <span id="dat" style="float&#58;right">
+        <h3>Date:{{ date('d/m/Y') }}</h3>
+    </span>
 
 
     <div>
-         <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              
-
-                <tbody>
-                    @foreach ($depenses as $depense)
-                    <tr> 
-                       <td>{{$depense['motif_depense']}}</td>
-                       <td>{{$depense['montant']}}</td>
-
-                 </tr>
-
-                    @endforeach
-                    
-                </tbody>
-
-            </table>
+        <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
 
-           
+            <tbody>
+                @foreach ($depenses as $depense)
+                    <tr>
+                        <td>{{ $depense['motif_depense'] }}</td>
+                        <td>{{ $depense['montant'] }}</td>
+
+                    </tr>
+                @endforeach
+
+            </tbody>
+
+        </table>
+
+
     </div>
+    @if (is_array($sums) || is_object($sums))
+        <tbody>
+            @foreach ($sums as $sum)
+                <tr>
+                    <td>{{ $sum }}</td>
+                </tr>
+            @endforeach
+
+
+
+        </tbody>
+    @else
+        <tr>
+            <h2> Total:<i>
+                    <td>{{ $sums }}&nbsp;FCFA</td>
+                </i></h2>
+        </tr>
+    @endif
+
+    <div>
+        <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+
+
+            <tbody>
+                @foreach ($groups as $group)
+                    <tr>
+                        <td>{{ $group['motif_depense'] }}</td>
+                        <td>{{ $group['montant'] }}</td>
+
+                    </tr>
+                @endforeach
+
+            </tbody>
+
+        </table>
+
+        @if (is_array($sums) || is_object($sums))
+        <tbody>
+            @foreach ($sums as $sum)
+                <tr>
+                    <td>{{ $sum }}</td>
+                </tr>
+            @endforeach
+
+
+
+        </tbody>
+    @else
+        <tr>
+            <h2> Total:<i>
+                    <td>{{ $sums }}&nbsp;FCFA</td>
+                </i></h2>
+        </tr>
+    @endif
+
+    </div>
+
+
+
 @endsection
+
+<script src="">
+    AJAX('GET/recettes', function(res) {
+
+        var groups = [];
+        res.forEach(function(menu) {
+            var parent = menu.parent;
+
+            var group_name = menu.parent;
+
+            if (groups[group_name]) {
+
+                groups[group_name].items.push(menu);
+
+            } else {
+                groups[group_name] = {
+
+                    id: id;
+                    montant: montant;
+                    items[menu];
+                };
+            };
+        });
+
+        var arr = [];
+        for (var key in groups) {
+            arr.push({
+                name: key;
+                items: groups[key].items
+
+            });
+            groups[key].items.quicksort('name');
+        }
+
+    });
+</script>

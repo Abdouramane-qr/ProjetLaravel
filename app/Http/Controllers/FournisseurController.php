@@ -32,25 +32,25 @@ class FournisseurController extends Controller
 
         $prixTotalCom = 0;
         $name = '';
-        $adresse = '';
+        $telephone = '';
         foreach ($commandes as $commands) {
             // $prixTotalCom += $commands;
             $name = $commands->nom;
-            $adresse = $commands->adresse;
+            $telephone = $commands->telephone;
         }
 
         view()->share('commandes', $commandes);
         view()->share('prixTotalCom', $prixTotalCom);
         view()->share('types', $types);
         view()->share('name', $name);
-        view()->share('adresse', $adresse);
+        view()->share('telephone', $telephone);
 
         $pdf = PDF::loadView('generate-pdf', [
             'prixTotalCom' => $prixTotalCom,
             'commandes' => $commandes,
             'types' => $types,
             'name' => $name,
-            'adresse' => $adresse,
+            'telephone' => $telephone,
         ]);
 
         return $pdf->download('commande.pdf');
@@ -70,7 +70,7 @@ class FournisseurController extends Controller
         foreach ($commandes as $commands) {
             // $prixTotalCom += $commands;
             $name = $commands->nom;
-            $adresse = $commands->adresse;
+            $telephone = $commands->telephone;
         }
 
         $pdf = app('dompdf.wrapper');
@@ -81,7 +81,7 @@ class FournisseurController extends Controller
             'types' => $types,
             // 'command' => $command,
             'name' => $name,
-            'adresse' => $adresse,
+             'telephone' => $telephone,
         ])->setOptions(['defaultFont' => 'sans-serif']);
 
         return $pdf->stream();
@@ -99,8 +99,8 @@ class FournisseurController extends Controller
             'article' => $request->article,
             'quantite' => $request->quantite,
             'price' => $request->price,
-            'adresse' => $request->adresse,
-            'email' => $request->email,
+            // 'adresse' => $request->adresse,
+            // 'email' => $request->email,
             'telephone' => $request->telephone,        ]
         );
 

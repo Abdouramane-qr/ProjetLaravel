@@ -6,10 +6,10 @@ use App\Client;
 use App\Commande;
 use App\Generation;
 use App\type;
-use PDF;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use PDF;
 
 class generationController extends Controller
 {
@@ -22,13 +22,14 @@ class generationController extends Controller
         $commandes = Commande::all();
         $generation = Generation::OrderBy('date')->get();
 
-        return view('generation.home')->with('commandes', $commandes);
+        return view('generation.home')->with('commandes', $commandes, 'generation', $generation);
     }
 
     public function get_edit_generation($id)
     {
         $generation = Generation::find($id);
         $types = type::all();
+        $client = Client::all();
         $modifier = [];
         foreach ($types as $type) {
             $modifier[$type->id] = $type->name;
@@ -36,8 +37,9 @@ class generationController extends Controller
             $modifier[$type->id] = $type->stockMin;
             $modifier[$type->id] = $type->Current_stock;
         }
+        view()->share('client', $client);
 
-        return view('generation.edit')->with('generation', $generation)->with('types', $modifier);
+        return view('generation.edit')->with('generation', $generation, 'client', $client)->with('types', $modifier);
     }
 
     public function edit_generation(Request $request, $id)
@@ -83,32 +85,59 @@ class generationController extends Controller
     {
         $entres = Generation::where('mode', 1)->OrderBy('date')->get();
         $commandes = Commande::latest('id')->first();
-
+        $client = Client::all();
         $types = type::all();
         $prixTotalCom = 0;
-        // foreach ($commandes as $commands) {
-        //     $prixTotalCom += $commands->ptotal();
-        // }
+
+        $commande = Commande::select('status')
+        ->take(10)
+        ->get();
+        $depe = Commande::select('status',
+        DB::raw('SUM(solde) as solde')
+        )
+        ->groupBy('status')
+        ->get();
+
+        $depen = DB::table('commandes')
+                     ->select(DB::raw('SUM(solde) as solde, status'))
+
+                     ->whereRaw('status="paid"')
+                     ->groupBy('status')
+                     ->get();
+
+        $credit = DB::table('commandes')
+                     ->select(DB::raw('SUM(solde) as solde, status'))
+                     ->whereRaw('status="credit"')
+                     ->groupBy('status')
+                     ->get();
+        // dd($depen);
         view()->share('prixTotalCom', $prixTotalCom);
         view()->share('types', $types);
+        view()->share('client', $client);
+        view()->share('commandes', $commandes);
+        view()->share('commande', $commande);
+        view()->share('depen', $depen);
+        view()->share('credit', $credit);
 
-        return view('In.show')->with('entres', $entres, 'commandes', $commandes);
+        return view('In.show')->with('entres', $entres, 'commandes', $commandes, 'client', $client, 'commande', $commande, 'depen', $depen, 'credit', $credit);
     }
 
     public function get_add_entres()
     {
         $types = type::all();
         $commandes = Commande::latest('id')->first();
-
+        $client = Client::all();
         $types = type::all();
         $prixTotalCom = 0;
-        foreach ($commandes as $commands) {
-            // $prixTotalCom += $commands->ptotal();
-        }
+        // foreach ($commandes as $commands) {
+        //     // $prixTotalCom += $commands->ptotal();
+        // }
         view()->share('prixTotalCom', $prixTotalCom);
         view()->share('types', $types);
-        view()->share( 'commandes' , $commandes);
-        return view('In.add')->with('types', $types, 'commandes', $commandes);
+        view()->share('commandes', $commandes);
+        view()->share('client', $client);
+
+        return view('In.add')->with('types', $types, 'commandes', $commandes, 'client', $client);
     }
 
     public function post_add_entres(Request $request)
@@ -127,7 +156,7 @@ class generationController extends Controller
         $entres->date = $request->date;
         $entres->nfacture = $request->nfacture;
         $entres->prix_uni = $request->prix_uni;
-        $entres->quantite =$request->Current_stock-$request->qte;
+        $entres->quantite = $request->Current_stock - $request->qte;
         $entres->fourni = $request->fourni;
         $entres->mode = 1;
         $entres->save();
@@ -365,15 +394,16 @@ class generationController extends Controller
     //----------------------------------------------------CLient-----------------------------------------
     //
 
-    /**  public function single_client($id)
-      {
-        $client = client::find($id);
-        $generation = Generation::where('fourni',$client->name);
-        $entres = $generation->where('mode',1)->get();
-        $sorties = $generation->where('mode',2)->get();
-        return view('client.single')->with('entres',$entres)->with('sorties',$sorties)->with('client',$client);
-      }
-     **/
+    // public function single_client($id)
+    // {
+    //     $client = client::find($id);
+    //     $generation = Generation::where('fourni', $client->name);
+    //     $entres = $generation->where('mode', 1)->get();
+    //     $sorties = $generation->where('mode', 2)->get();
+
+    //     return view('client.single')->with('entres', $entres)->with('sorties', $sorties)->with('client', $client);
+    // }
+
     public function single_client($id)
     {
         $generation = Generation::find($id);   //the generation row where id = $id
@@ -381,6 +411,7 @@ class generationController extends Controller
     $generations = Generation::where('fourni', $client->name); // generation where the fourni have the name of existing client
     $entres = $generations->where('mode', 1)->get();
         $sorties = $generations->where('mode', 2)->get();
+        view()->share('client', $client);
 
         return view('client.single')->with('entres', $entres)->with('sorties', $sorties)->with('client', $client);
     }
@@ -391,6 +422,7 @@ class generationController extends Controller
         $generations = Generation::where('fourni', $client->name); // generation where the fourni have the name of existing client
         $entres = $generations->where('mode', 1)->get();
         $sorties = $generations->where('mode', 2)->get();
+        view()->share('client', $client);
 
         return view('client.edit')->with('entres', $entres)->with('sorties', $sorties)->with('client', $client);
     }
@@ -406,19 +438,10 @@ class generationController extends Controller
         $client->telephone = $request->telephone;
         $client->email = $request->email;
         $client->update();
+        view()->share('client', $client);
 
         return redirect()->route('single.client', $id);
     }
-
-    public function changeStatus(Request $request, $id)
-    {
-        $orders = User::find($id);
-        User::where('id', $id)->update(['status' => $request->status]);
-        view()->share('orders', $orders);
-
-        return view('In.show', compact('$order'));
-    }
-
 
     public function generatePDFAvoir(Request $request)
     {

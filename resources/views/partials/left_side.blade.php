@@ -109,7 +109,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href='{{ route('recette.create') }}' id="active-sorties-table">
+                            <a  href="{{ route('recette.view') }}" id="active-sorties-table">
                                 <span>Table</span>
                             </a>
                         </li>
@@ -120,6 +120,32 @@
                         </li>
                     </ul>
                 </li>
+
+
+
+
+{{-- :Clients --}}
+                {{-- <li class='has_sub'>
+                    <a href='javascript:void(0);'>
+                        <i class='fa fa-table'></i>
+                        <span>Client</span>
+                        <span class="pull-right">
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href='{{ route('get_edit_client',$client->id)}}' id="active-sorties-table">
+                                <span>Table</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='{{ route('recette.store') }}' id="active-sorties-add">
+                                <span>Ajouter</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> --}}
             </ul>
             <div class="clearfix"></div>
         </div>

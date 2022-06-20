@@ -1,7 +1,10 @@
-
+@extends('main')
+@section('contents')
 <!DOCTYPE html>
+
 <html>
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -85,11 +88,12 @@ footer{
 
 </style>
 </head>
+
 <body>
 
       
-  
-<h1 style="text-align: center">AVOIR COMMANDE</h1>
+ 
+<h3 style="text-align: center">AVOIR COMMANDE</h3>
   <p><div style="float&#58;start"> <h1>Ets Pengd-wendé</div> </p>
 
   
@@ -143,7 +147,7 @@ footer{
   
   
   
-  </tr>@foreach ($commandes as $commande)
+  {{-- </tr>@foreach ($commandes as $commande)
            <tr style="cursor: pointer">
                 {{-- <th scope="row">{{$commande->id}}</th>
                 <td><a >{{$commande->article}}</a></td>
@@ -151,11 +155,11 @@ footer{
                 <td><a >{{$commande->price}}</a></td>
                 <td><a >{{$commande->solde}}</a></td> --}}
 
-                <td><a ></a></td>
+                {{-- <td><a ></a></td>
                 
              {{-- <td style="color: green">{{$commande->created_at}}</td> --}}
-              </tr>
-            @endforeach
+              {{-- </tr>
+            @endforeach --}} 
 </table>
 
  
@@ -182,7 +186,7 @@ footer{
 
 
 </html>
-
+@endsection
 
 
 

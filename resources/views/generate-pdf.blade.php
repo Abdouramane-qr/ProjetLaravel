@@ -93,7 +93,7 @@ footer{
   <p><div style="float&#58;start"> <h1>Ets Pengd-wendé</div> </p>
 
   <div>
-    <span id="ou" style="float&#58;right"> <h3>Ouaga le:..................</h3> </span>
+    {{-- <span id="ou" style="float&#58;right"> <h3>Ouaga le:..................</h3> </span> --}}
     <span id="dat" style="float&#58;right"> <h3>Date:{{ date('d/m/Y') }}</h3> </span>
 </div>
 
@@ -122,7 +122,7 @@ footer{
     
 
 <h4>  <div style="float&#58;left" >Nom du client:....{{$name}}...</div> 
-  <div style="float&#58;right" >Adresse:..............{{$adresse}}.......................................................</div>
+  <div style="float&#58;right" >Telephone:..............{{$telephone}}.......................................................</div>
 </h4>
 
 </div> 

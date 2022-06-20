@@ -14,4 +14,5 @@ class Recette extends Model
         'montant',
         'motif_depense',
 ];
+
 }

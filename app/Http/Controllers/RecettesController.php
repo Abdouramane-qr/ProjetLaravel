@@ -29,7 +29,19 @@ class RecettesController extends Controller
         ->get();
         // dd($depenses);
 
-        return view('recettes.index', compact('recettes', 'depenses'))->with(['recettes' => $recettes, 'depenses' => $depenses]);
+        $groups = Recette::select('motif_depense',
+        DB::raw('SUM(montant) as montant')
+        )
+        ->groupBy('motif_depense')
+        ->orderBy('created_at')
+        ->get();
+        // dd($groups);
+        $sums = Recette::sum('montant');
+
+        // dd($sum);
+        // $number = cal_days_in_month(CAL_GREGORIAN, 8, 2003);
+
+        return view('recettes.index', compact('recettes', 'depenses', 'sums'))->with(['recettes' => $recettes, 'depenses' => $depenses, 'sums' => $sums, 'groups' => $groups]);
     }
 
     /**

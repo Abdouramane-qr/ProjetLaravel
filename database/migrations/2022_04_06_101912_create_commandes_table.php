@@ -22,6 +22,7 @@ class CreateCommandesTable extends Migration
             $table->float('solde');
             $table->string('adresse');
             $table->string('telephone');
+            $table->string('status')->default('pending');
             $table->string('email');
             $table->foreign('recette_id')->references('id')->on('recettes')->onDelete('cascade');
             $table->unsignedBigInteger('recette_id');

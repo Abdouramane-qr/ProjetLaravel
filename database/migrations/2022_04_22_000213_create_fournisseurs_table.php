@@ -18,7 +18,10 @@ class CreateFournisseursTable extends Migration
             $table->string('name');
             $table->text('adresse');
             $table->text('email');
+            $table->flot('quantite');
             $table->text('telephone');
+            $table->text('article');
+            $table->flot('price');
             $table->unsignedBigInteger('types_id');
             $table->foreign('types_id')->references('id')->on('types')->onDelete('cascade');
             $table->timestamps();

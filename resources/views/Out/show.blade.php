@@ -26,12 +26,12 @@ Fournisseurs
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Adresse</label>
-                                <input type="text" name="adresse" class="form-control" id="adresse"
+                                <label for="inputEmail4">Telephone</label>
+                                <input type="text" name="telephone" class="form-control" id="telephone"
                                     placeholder="Entrez Adresse" required>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            {{-- <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
                                 <input type="email" name="email" class="form-control" id="email"
                                     placeholder="Entrez email" required>
@@ -41,7 +41,7 @@ Fournisseurs
                                 <label for="inputEmail4">Telephone</label>
                                 <input type="text" name="telephone" class="form-control" id="telephone"
                                     placeholder="Entrez Adresse" required>
-                            </div>
+                            </div> --}}
                         </div>
 
 
